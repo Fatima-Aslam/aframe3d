@@ -17,28 +17,26 @@
 </head>
 <body>
   <div id="card">
-    <!-- ✅ iOS AR Quick Look (opens USDZ in native viewer) -->
-    <a rel="ar" href="honey.usdz">
-      <model-viewer
-        id="honey-badger-viewer"
-        camera-controls
-        touch-action="pan-y"
-        ar
-        ar-modes="quick-look"  
-        scale="0.2 0.2 0.2"
-        shadow-intensity="1"
-        src="honey.glb"         
-        ios-src="honey.usdz"   
-        alt="Honey Badger"
-        loading="eager"
-        autoplay
-      >
-      </model-viewer>
-    </a>
+    <!-- ✅ <model-viewer> with AR and iOS support -->
+    <model-viewer
+      id="honey-badger-viewer"
+      camera-controls
+      touch-action="pan-y"
+      autoplay
+      ar
+      ar-modes="scene-viewer webxr quick-look"
+      scale="0.2 0.2 0.2"
+      shadow-intensity="1"
+      src="honey.glb"         
+      ios-src="honey.usdz"    
+      alt="Honey Badger"
+    >
+    </model-viewer>
 
     <section class="attribution">
       <h1>Honey Badger</h1>
     </section>
+  </div>
   </div>
 
   <!-- ✅ model-viewer script -->
