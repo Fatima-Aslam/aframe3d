@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>&lt;Light Animation &gt;</title>
+    <title>&lt;Honey Badger &gt;</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,8 @@
 
     <!-- Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
         <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
 
     <!-- The :focus-visible polyfill removes the focus ring for some input types -->
     <script
@@ -62,6 +64,12 @@
       </model-viewer>
 
       <script>
+        var SongTune = new Howl({
+        src: [
+          "https://cdn.glitch.global/91a464bf-2558-4f5b-91b6-02948124204e/song.mp3?v=1725276897258",
+        ],
+         loop: true,
+      });
         const modelViewerColor = document.querySelector(
           "model-viewer#play-paused"
         );
@@ -71,17 +79,10 @@
         document
           .querySelector("#play-controls")
           .addEventListener("click", (event) => {
-          modelViewerColor.setAttribute("src","https://cdn.glitch.global/e8e170b4-ee43-42a9-bf2f-85bc423f7926/PhysicsLightAnimation.glb?v=1721475116966");
+            SongTune.play();
             //alert("play button clicked");
           });
-        // document
-        //   .querySelector("#pause-controls")
-        //   .addEventListener("click", (event) => {
-        //     //alert("pause button clicked");
-        //   modelViewerColor.setAttribute("src","https://cdn.glitch.global/e8e170b4-ee43-42a9-bf2f-85bc423f7926/PhysicsFramesModel.glb?v=1721475089181");
-        //   });
       </script>
-
       <section class="attribution">
         <span>
           <h1>Light Animation</h1>
