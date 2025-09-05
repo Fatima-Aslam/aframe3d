@@ -11,9 +11,6 @@
   <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
   <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
   <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-
-  <!-- ✅ Howler.js for audio -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
 <body>
   <div id="card">
@@ -27,7 +24,7 @@
       ar-modes="scene-viewer webxr quick-look"
       scale="0.2 0.2 0.2"
       shadow-intensity="1"
-      src="honey.glb"         
+      src="humming-bird.glb"         
       ios-src="honey.usdz"    
       alt="Honey Badger"
       ar-scene-viewer="file=humming-bird.glb&sound=happy.mp3">
@@ -43,23 +40,5 @@
   <!-- ✅ model-viewer script -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-
-  <!-- ✅ Play sound when AR session starts (non-iOS only) -->
-  <script>
-    const modelViewer = document.querySelector('#honey-badger-viewer');
-
-    // ✅ Load the sound
-    const honeySound = new Howl({
-      src: ['happy.mp3'],
-      volume: 1.0
-    });
-
-    // ✅ Play sound when WebXR or Scene Viewer AR starts (not iOS Quick Look)
-    modelViewer.addEventListener('ar-status', (event) => {
-      if (event.detail.status === 'session-started') {
-        honeySound.play();
-      }
-    });
-  </script>
 </body>
 </html>
